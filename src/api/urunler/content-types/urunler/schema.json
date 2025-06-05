@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "urunlers",
+  "info": {
+    "singularName": "urunler",
+    "pluralName": "urunlers",
+    "displayName": "Urunler",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "urunName": {
+      "type": "text"
+    },
+    "urunImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "urun_kategori": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::urun-kategori.urun-kategori",
+      "inversedBy": "urunlers"
+    },
+    "urunDesc": {
+      "type": "richtext"
+    }
+  }
+}

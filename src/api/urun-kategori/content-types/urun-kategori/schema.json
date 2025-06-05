@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "urun_kategoris",
+  "info": {
+    "singularName": "urun-kategori",
+    "pluralName": "urun-kategoris",
+    "displayName": "urunKategori"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "urunlers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::urunler.urunler",
+      "mappedBy": "urun_kategori"
+    },
+    "urunKategoriName": {
+      "type": "text"
+    },
+    "urunKategoriImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "urunKategoriSlideImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

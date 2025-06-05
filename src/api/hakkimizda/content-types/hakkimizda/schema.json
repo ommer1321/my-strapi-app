@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hakkimizdas",
+  "info": {
+    "singularName": "hakkimizda",
+    "pluralName": "hakkimizdas",
+    "displayName": "referanslar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "referansTitle": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "location": {
+      "type": "text"
+    }
+  }
+}
