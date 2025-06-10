@@ -4,7 +4,8 @@
   "info": {
     "singularName": "urun-kategori",
     "pluralName": "urun-kategoris",
-    "displayName": "urunKategori"
+    "displayName": "urunKategori",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,24 +21,32 @@
       "type": "text"
     },
     "urunKategoriImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "urunKategoriSlideImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "urunKategoriDesc": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

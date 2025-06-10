@@ -33,6 +33,9 @@
     },
     "urunDesc": {
       "type": "richtext"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
