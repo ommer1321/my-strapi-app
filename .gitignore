@@ -10,13 +10,11 @@ Icon
 .Trashes
 ._*
 
-
 ############################
 # Linux
 ############################
 
 *~
-
 
 ############################
 # Windows
@@ -30,7 +28,6 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-
 
 ############################
 # Packages
@@ -60,17 +57,19 @@ $RECYCLE.BIN/
 *.out
 *.pid
 
-
 ############################
 # Logs and databases
 ############################
 
-.tmp
+# .tmp klasörünün tamamını ignore etme, sadece data.db'yi dahil et
+# .tmp dizinini dahil et ama sadece veri dosyasını ekle
+!.tmp/
+!.tmp/data.db
+
 *.log
 *.sql
 *.sqlite
 *.sqlite3
-
 
 ############################
 # Misc.
@@ -80,8 +79,11 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
-public/uploads/*
-!public/uploads/.gitkeep
+
+# uploads klasörünü tamamen dahil et
+!public/uploads/
+!public/uploads/**
+
 .tsbuildinfo
 .eslintcache
 
@@ -121,9 +123,17 @@ coverage
 # Strapi
 ############################
 
+# .env dahil edilsin(mesin)
+# !.env
 .env
+
+# Bu dosya production build ile ilgilidir, ignore edilebilir
 license.txt
-exports
+
+# Export klasörü manuel olarak yönetilebilir, istenirse dahil edilir
+# !exports/
+
+# Strapi cache/config dosyaları genelde ignore edilir
 .strapi
 dist
 build
