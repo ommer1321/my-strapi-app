@@ -4,7 +4,8 @@
   "info": {
     "singularName": "hakkimizda",
     "pluralName": "hakkimizdas",
-    "displayName": "referanslar"
+    "displayName": "Referanslar",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,17 +15,23 @@
       "type": "text"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "location": {
       "type": "text"
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }
