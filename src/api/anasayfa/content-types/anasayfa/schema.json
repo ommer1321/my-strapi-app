@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "anasayfas",
+  "info": {
+    "singularName": "anasayfa",
+    "pluralName": "anasayfas",
+    "displayName": "anasayfa"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    }
+  }
+}

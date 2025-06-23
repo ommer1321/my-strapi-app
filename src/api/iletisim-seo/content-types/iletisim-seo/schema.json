@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "about_uses",
+  "collectionName": "iletisim_seos",
   "info": {
-    "singularName": "about-us",
-    "pluralName": "about-uses",
-    "displayName": "aboutUs",
-    "description": ""
+    "singularName": "iletisim-seo",
+    "pluralName": "iletisim-seos",
+    "displayName": "iletisimSeo"
   },
   "options": {
     "draftAndPublish": true
@@ -13,7 +12,7 @@
   "attributes": {
     "SEO": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "seo.seo"
     }
   }
