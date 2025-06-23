@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "urunler_seos",
+  "info": {
+    "singularName": "urunler-seo",
+    "pluralName": "urunler-seos",
+    "displayName": "urunlerSeo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "ref_seos",
+  "info": {
+    "singularName": "ref-seo",
+    "pluralName": "ref-seos",
+    "displayName": "refSeo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    }
+  }
+}

@@ -373,13 +373,12 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
-  collectionName: 'about_uses';
+export interface ApiAnasayfaAnasayfa extends Struct.SingleTypeSchema {
+  collectionName: 'anasayfas';
   info: {
-    description: '';
-    displayName: 'aboutUs';
-    pluralName: 'about-uses';
-    singularName: 'about-us';
+    displayName: 'anasayfa';
+    pluralName: 'anasayfas';
+    singularName: 'anasayfa';
   };
   options: {
     draftAndPublish: true;
@@ -391,11 +390,11 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::about-us.about-us'
+      'api::anasayfa.anasayfa'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    SEO: Schema.Attribute.Component<'seo.seo', true>;
+    SEO: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -460,6 +459,34 @@ export interface ApiFormForm extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHakkimizdaSeoHakkimizdaSeo extends Struct.SingleTypeSchema {
+  collectionName: 'hakkimizda_seos';
+  info: {
+    displayName: 'hakkimizdaSeo';
+    pluralName: 'hakkimizda-seos';
+    singularName: 'hakkimizda-seo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hakkimizda-seo.hakkimizda-seo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    SEO: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHakkimizdaHakkimizda extends Struct.CollectionTypeSchema {
   collectionName: 'hakkimizdas';
   info: {
@@ -492,6 +519,62 @@ export interface ApiHakkimizdaHakkimizda extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiIletisimSeoIletisimSeo extends Struct.SingleTypeSchema {
+  collectionName: 'iletisim_seos';
+  info: {
+    displayName: 'iletisimSeo';
+    pluralName: 'iletisim-seos';
+    singularName: 'iletisim-seo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::iletisim-seo.iletisim-seo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    SEO: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRefSeoRefSeo extends Struct.SingleTypeSchema {
+  collectionName: 'ref_seos';
+  info: {
+    displayName: 'refSeo';
+    pluralName: 'ref-seos';
+    singularName: 'ref-seo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ref-seo.ref-seo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    SEO: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiUrunKategoriUrunKategori
   extends Struct.CollectionTypeSchema {
   collectionName: 'urun_kategoris';
@@ -515,7 +598,7 @@ export interface ApiUrunKategoriUrunKategori
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    SEO: Schema.Attribute.Component<'seo.seo', true>;
+    SEO: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -529,6 +612,34 @@ export interface ApiUrunKategoriUrunKategori
       'images' | 'files' | 'videos' | 'audios'
     >;
     urunlers: Schema.Attribute.Relation<'oneToMany', 'api::urunler.urunler'>;
+  };
+}
+
+export interface ApiUrunlerSeoUrunlerSeo extends Struct.SingleTypeSchema {
+  collectionName: 'urunler_seos';
+  info: {
+    displayName: 'urunlerSeo';
+    pluralName: 'urunler-seos';
+    singularName: 'urunler-seo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::urunler-seo.urunler-seo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    SEO: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1081,11 +1192,15 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::anasayfa.anasayfa': ApiAnasayfaAnasayfa;
       'api::contact.contact': ApiContactContact;
       'api::form.form': ApiFormForm;
+      'api::hakkimizda-seo.hakkimizda-seo': ApiHakkimizdaSeoHakkimizdaSeo;
       'api::hakkimizda.hakkimizda': ApiHakkimizdaHakkimizda;
+      'api::iletisim-seo.iletisim-seo': ApiIletisimSeoIletisimSeo;
+      'api::ref-seo.ref-seo': ApiRefSeoRefSeo;
       'api::urun-kategori.urun-kategori': ApiUrunKategoriUrunKategori;
+      'api::urunler-seo.urunler-seo': ApiUrunlerSeoUrunlerSeo;
       'api::urunler.urunler': ApiUrunlerUrunler;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
