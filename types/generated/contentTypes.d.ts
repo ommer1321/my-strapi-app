@@ -597,6 +597,7 @@ export interface ApiUrunKategoriUrunKategori
       'api::urun-kategori.urun-kategori'
     > &
       Schema.Attribute.Private;
+    order: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String;
