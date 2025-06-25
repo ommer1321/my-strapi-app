@@ -125,7 +125,7 @@ coverage
 
 # .env dahil edilsin(mesin)
 # !.env
-.env
+# .env
 
 # Bu dosya production build ile ilgilidir, ignore edilebilir
 license.txt
