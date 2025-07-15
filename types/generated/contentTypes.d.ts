@@ -547,6 +547,37 @@ export interface ApiIletisimSeoIletisimSeo extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiRedirectRedirect extends Struct.CollectionTypeSchema {
+  collectionName: 'redirects';
+  info: {
+    description: '';
+    displayName: 'Redirect';
+    pluralName: 'redirects';
+    singularName: 'redirect';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::redirect.redirect'
+    > &
+      Schema.Attribute.Private;
+    newUrl: Schema.Attribute.String;
+    oldUrl: Schema.Attribute.String;
+    permanent: Schema.Attribute.Boolean;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiRefSeoRefSeo extends Struct.SingleTypeSchema {
   collectionName: 'ref_seos';
   info: {
@@ -1199,6 +1230,7 @@ declare module '@strapi/strapi' {
       'api::hakkimizda-seo.hakkimizda-seo': ApiHakkimizdaSeoHakkimizdaSeo;
       'api::hakkimizda.hakkimizda': ApiHakkimizdaHakkimizda;
       'api::iletisim-seo.iletisim-seo': ApiIletisimSeoIletisimSeo;
+      'api::redirect.redirect': ApiRedirectRedirect;
       'api::ref-seo.ref-seo': ApiRefSeoRefSeo;
       'api::urun-kategori.urun-kategori': ApiUrunKategoriUrunKategori;
       'api::urunler-seo.urunler-seo': ApiUrunlerSeoUrunlerSeo;

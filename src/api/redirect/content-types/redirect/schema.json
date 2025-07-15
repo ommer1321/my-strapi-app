@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "redirects",
+  "info": {
+    "singularName": "redirect",
+    "pluralName": "redirects",
+    "displayName": "Redirect",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "oldUrl": {
+      "type": "string"
+    },
+    "newUrl": {
+      "type": "string"
+    },
+    "permanent": {
+      "type": "boolean"
+    }
+  }
+}
