@@ -401,29 +401,31 @@ export interface ApiAnasayfaAnasayfa extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiContactContact extends Struct.CollectionTypeSchema {
-  collectionName: 'contacts';
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
   info: {
-    description: '';
-    displayName: 'ileti\u015Fim';
-    pluralName: 'contacts';
-    singularName: 'contact';
+    displayName: 'Blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    content: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::contact.contact'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    SEO: Schema.Attribute.Component<'seo.seo', false>;
+    slug: Schema.Attribute.String;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1225,7 +1227,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::anasayfa.anasayfa': ApiAnasayfaAnasayfa;
-      'api::contact.contact': ApiContactContact;
+      'api::blog.blog': ApiBlogBlog;
       'api::form.form': ApiFormForm;
       'api::hakkimizda-seo.hakkimizda-seo': ApiHakkimizdaSeoHakkimizdaSeo;
       'api::hakkimizda.hakkimizda': ApiHakkimizdaHakkimizda;
